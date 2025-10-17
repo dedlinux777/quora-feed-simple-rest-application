@@ -68,6 +68,8 @@ app.delete("/posts/:id", (req, res) => {
   res.redirect("/posts");
 });
 
-app.listen(port, () => {
-  console.log(`Listening to port : ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Listening to port : ${port}`);
+// });
+
+module.exports = app;
