@@ -1,0 +1,250 @@
+/* --- UNIVERSAL STYLES & FONT --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 680px; /* Narrower container for a single-column feed */
+    width: 100%;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1877f2;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+/* --- POST FEED (Original Style) --- */
+.post {
+    background-color: #ffffff;
+    border: 1px solid #dddfe2;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.post:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-username {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #050505;
+    margin: 0 0 8px 0;
+}
+
+.post-username::before {
+    content: '@';
+    color: #1877f2;
+    margin-right: 4px;
+}
+
+.post-content {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+
+    /* multiline truncation */
+    display: -webkit-box;
+    line-clamp: 3; /* show up to 3 lines (standard property) */
+    -webkit-line-clamp: 3; /* show up to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* fallback for non-webkit browsers */
+    max-height: calc(1.5em * 3); /* line-height * lines */
+    white-space: normal;
+}
+
+
+/* --- ACTION BUTTONS (For both pages) --- */
+.add-post-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.action-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* --- NEW POST FORM (new.ejs) --- */
+.form-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Button used on the form (full-width, consistent look) */
+.form-button {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-top: 6px;
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.18);
+    text-align: center;
+}
+
+/* small responsive tweak for the form container */
+.form-container {
+    margin: 0 auto 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Controls inside each post: align edit + detail buttons */
+.post-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    align-items: center;
+}
+
+/* Small edit link styled like a subtle button */
+.edit-link {
+    display: inline-block;
+    padding: 8px 12px;
+    background: transparent;
+    color: #1877f2;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid transparent;
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.edit-link:hover {
+    background: rgba(24, 119, 242, 0.06);
+    box-shadow: 0 3px 8px rgba(24,119,242,0.08);
+}
+
+/* Variation for the detail button inside post controls (keeps action-btn look but slightly smaller) */
+.detail-btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+/* Back link variations used on forms */
+.back-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* Post meta small text */
+.post-meta {
+    margin: 6px 0;
+    color: #5b6368;
+    font-size: 0.95rem;
+}
+
+/* Make the delete form inline so the button aligns with other controls */
+.delete-form {
+    display: inline-block;
+    margin: 0;
+}
+
+/* Prominent delete button */
+.delete-btn {
+    display: inline-block;
+    background: linear-gradient(180deg, #ff5c5c, #e53935);
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(229,57,53,0.18);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+}
+
+/* Hover / focus / active states for accessibility and feedback */
+.delete-btn:hover,
+.delete-btn:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(229,57,53,0.22);
+    outline: none;
+}
+
+.delete-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(229,57,53,0.18);
+    opacity: 0.95;
+}
+
+/* Smaller layout variation for compact controls if needed */
+.post-controls .delete-btn {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+}
+
+/* Ensure delete button matches dark-on-light contrast and is readable */
+.delete-btn[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+

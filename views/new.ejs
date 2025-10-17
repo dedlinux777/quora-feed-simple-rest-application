@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="page-title" style="margin-top:0;margin-bottom:16px;font-size:1.5rem;">Add New Post</h1>
+        <form action="/posts" method="post">
+            <input class="form-input" type="text" placeholder="Enter Username" name="username" required>
+            <textarea class="form-textarea" name="content" placeholder="Write your post" required></textarea>
+            <button type="submit" class="action-btn form-button">Submit</button>
+        </form>
+        <div style="text-align:center;margin-top:12px;">
+            <a href="/posts" class="action-btn back-link" style="background:transparent;color:#1877f2;box-shadow:none;padding:8px 12px;border-radius:6px;">Back to Feed</a>
+        </div>
+    </div>
+</body>
+</html>

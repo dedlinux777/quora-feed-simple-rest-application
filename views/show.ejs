@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show post in detail</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="post">
+        <h3 class="post-username">
+            <%= post.username %>
+        </h3>
+        <p class="post-content">
+            <%= post.content %>
+        </p>
+        <br>
+        <br>
+        <div class="post-controls">
+            <a href="/posts/<%=post.id%>/edit" class="edit-link">Edit</a><br>
+            <form action="/posts/<%=post.id%>?_method=DELETE" method="post" class="delete-form">
+                <button type="submit" class="delete-btn">Delete post</button>
+            </form>
+            <a href="/posts/<%=post.id%>" class="action-btn detail-btn">See in detail</a>
+        </div>
+    </div>
+</body>
+
+</html>
